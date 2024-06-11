@@ -1,0 +1,52 @@
+                                               How to deploy Django Project in PythonAnywhere.com
+
+1. Create Your Account in PythonAnywhere.com
+2. there are 
+
+   a. DASHBOARD
+   b. CONSOLE
+   c. FILES
+   d. WEB
+   e. TASKS
+   f. DATABASE
+
+3. Go to Web and create new web
+4. then open console and type pwd
+5. clone your project   git clone https://github.com/aaammiit/simple_project.git
+6. cd simple_project
+7. mkvirtualenv env
+8. pip install Django
+9. python manage.py makemigrations
+10.python manage.py migrate
+11.python manage.py collectstatic 
+12.then come in web and find Virtualenv: there put your virtualenv 
+13.Come in Code and open WSGI configuration file and Edit your home path and settings path and save:   
+                                                      import os
+                                                      import sys
+
+                                                      # add your project directory to the sys.path
+
+                                                      project_home = '/home/Krimasolutions/youtube_video_downloader'
+
+                                                      if project_home not in sys.path:
+                                                              sys.path.insert(0, project_home)
+
+                                                      # set environment variable to tell django where your settings.py is
+
+                                                      os.environ['DJANGO_SETTINGS_MODULE'] = 'Youtube.settings'
+
+
+
+                                                      from django.core.wsgi import get_wsgi_application
+                                                      application = get_wsgi_application()
+
+14.Come in Static files: and give your url like /static/ and path of your static file and save them
+15. Force HTTPS:and enable this
+16. then go reloade 
+16. come in Configuration for in web
+17. copy your Krimasolutions.pythonanywhere.com and paste in google
+18. Your project are live
+                                             
+                                                       Thank You
+                                                                                                                Amit Kumar Dwivedi
+
